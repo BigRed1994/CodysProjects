@@ -1,0 +1,29 @@
+Test Plan (Unit Testing)
+
+1. Test addSong
+   - Add a song with valid title, artist, album, and genre → Song is added to the map
+   - Add a song with an empty title or other field → FieldsNotFilledOutException is thrown
+
+2. Test removeSong
+   - Remove an existing song → Song is removed
+   - Remove a non-existent song → Message indicates no song found
+
+3. Test playSong
+   - Play a song that exists → Song is added to the nowPlayingQueue and history
+   - Play a non-existent song → Message indicates song not found
+
+4. Test artistSearch
+   - Search for an existing artist → List of their songs is printed
+   - Search for an unknown artist → Message indicates no songs found
+
+5. Test artistSort
+   - Songs sorted and printed in artist alphabetical order
+
+6. Test displayPlaylistStats
+   - Playlist with multiple songs → Correct totals for songs, unique artists, albums, and genres
+   - Empty playlist → Displays message that playlist is empty
+
+7. Test file load/save
+   - Load valid file → Songs added
+   - Load file with invalid data → Skips or warns
+   - Save file → File created with expected data

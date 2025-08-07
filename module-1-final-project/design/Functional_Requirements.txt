@@ -1,0 +1,12 @@
+Functional Requirements (User Stories)
+
+1. As a user, I want to add a new song by entering its title, artist, album, and genre.
+2. As a user, I want to remove a song by entering its title.
+3. As a user, I want to play a song by its title, and have it added to a play queue and history.
+4. As a user, I want to view the full playlist of songs.
+5. As a user, I want to search for all songs by a specific artist.
+6. As a user, I want to sort and view all artists alphabetically.
+7. As a user, I want to load songs from a file into my playlist.
+8. As a user, I want to save the current playlist to a file.
+9. As a user, I want to see statistics about my playlist, including the number of songs, unique artists, albums, and genres.
+10. As a user, I want to interact with a menu system that guides me through using the application.

@@ -1,0 +1,85 @@
+1. Functional Requirements (User Capabilities)
+As a user, I want to add a song by providing a title, artist, album, and genre, so I can build a playlist.
+
+As a user, I want to remove a song by title, so I can manage my playlist.
+
+As a user, I want to play a song, so it gets added to the play history and now-playing queue.
+
+As a user, I want to view the history of played songs in order.
+
+As a user, I want to view the current song queue.
+
+As a user, I want to search songs by artist name.
+
+As a user, I want to view a list of songs sorted by artist.
+
+As a user, I want to get playlist statistics like the number of songs, most common genre, or artist frequency.
+
+As a user, I want the system to prevent invalid entries such as null titles or missing fields.
+
+As a user, I want to know if I try to play or remove a song that doesn’t exist.
+
+ 2. Class & Interface Summaries
+
+#FirstCapStoneProj (Main Application Class)
+
+Responsibilities:
+
+Manages static maps and queues for songs, history, and now playing.
+
+Provides public methods: addSong, removeSong, playSong, artistSearch, artistSort, displayPlaylistStats.
+
+Key Data Structures:
+
+Map<String, SongInfo> songs
+
+Queue<SongInfo> nowPlayingQueue
+
+List<SongInfo> history
+
+#SongInfo (Data Model Class)
+Fields:
+
+String title
+
+String artist
+
+String album
+
+String genre
+
+
+#Encapsulation
+All fields private, with public getters and setters.
+
+#Methods
+toString() to display song details.
+
+#Playable (Interface)
+Purpose: Defines contract for anything that can be played.
+
+#Abstract Method:
+void playSong(String title);
+
+Implemented By: FirstCapStoneProj
+
+#InvalidSongException (Custom Exception)
+
+Thrown When: A song is added with missing or null title, artist, album, or genre.
+
+Usage: Catches user input errors and protects app integrity.
+
+3. Test Plan Overview
+Test Category	                What It Tests	                                                            Tested In
+
+Add Song	            Valid and invalid song entries, special characters, long titles	                    testAddSongSuccessfully, testAddSongWithMissingFieldsThrowsException, testAddSongWithVeryLongTitle, etc.
+
+Remove Song             Existing and non-existing songs, special characters                               	testRemoveExistingSong, testRemoveNonExistingSong
+
+Play Song	            Playing valid/invalid songs, history & queue updates	                            testPlaySong, testPlayNonExistingSong,  testPlayingMultipleSongsInQueue
+
+Song Search and Sort	Artist-based filtering and alphabetical sort	                                    testSearchForArtistWithNoSongs, testArtistSortWithEmptyPlaylist
+
+Edge Cases	            Null safety, case sensitivity	                                                    testNullSafety, testCaseSensitivityInSongTitles
+
+Statistics	            Playlist stats with empty and populated data

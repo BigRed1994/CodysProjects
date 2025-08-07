@@ -1,0 +1,32 @@
+Class and Interface Summaries
+
+1. FirstCapStoneProj
+   - Purpose: Main class containing program logic and user interaction menu.
+   - Key Methods: addSong, removeSong, playSong, displayPlaylist, artistSearch, artistSort, displayPlaylistStats, menu
+   - Fields: Map<String, SongInfo> songs, List<AlbumInfo> albums, Set<GenreInfo> genres, Queue<SongInfo> nowPlayingQueue, List<SongInfo> history
+
+2. SongInfo (implements Playable)
+   - Purpose: Represents a song with title, artist, album, and genre.
+   - Fields: title, artist, album, genre
+   - Method: Play (from Playable interface)
+
+3. AlbumInfo (implements Playable)
+   - Purpose: Represents an album (details not shown, assumed similar to SongInfo)
+   - Method: Play (from Playable interface)
+
+4. GenreInfo
+   - Purpose: Represents a genre (details not shown, used in a Set)
+
+5. Playable (Interface)
+   - Method: void Play()
+
+6. PlaylistLoader
+   - Purpose: Utility class to load songs from a file.
+   - Method: loadSongsFromFile
+
+7. PlaylistSaver
+   - Purpose: Utility class to save the playlist to a file.
+   - Method: savePlaylistToFile
+
+8. FieldsNotFilledOutException (Custom Exception)
+   - Purpose: Thrown when user leaves required fields blank when adding a song.
