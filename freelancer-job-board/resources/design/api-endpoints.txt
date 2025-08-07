@@ -1,0 +1,12 @@
+| Endpoint             | Method | Query/Path Params | Description                             | Success | Error | Auth             |
+| -------------------- | ------ | ----------------- | --------------------------------------- | ------- | ----- | ---------------- |
+| /login               | POST   | JSON body         | Log in user                             | 200     | 401   | None             |
+| /register            | POST   | JSON body         | Register new user                       | 201     | 400   | None             |
+| /jobs                | GET    | None              | Get all jobs                            | 200     | 500   | None             |
+| /jobs                | POST   | JSON body         | Post a job (Client)                     | 201     | 400   | Client           |
+| /jobs/client         | GET    | None              | Get jobs by logged-in (Client)          | 200     | 401   | Client           |
+| /applications        | GET    | None              | Get all applications (Client)           | 200     | 403   | Client           |
+| /categories          | GET    | None              | Get all categories                      | 200     | 500   | None             |*
+| /skills              | GET    | None              | Get all skills                          | 200     | 500   | None             |
+| /applications        | POST   | JSON body         | Apply for job                           | 201     | 400   | Freelancer       |
+| /users               | GET    | None              | Get all users                           | 200     | 401   | None             |

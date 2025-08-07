@@ -1,0 +1,64 @@
+## Model Classes
+
+User
+
+* userId : int
+* name : String
+* email : String
+* password : String
+* role : String
+
+Job
+
+* jobs\_id : int
+* title : String
+* description : String
+* posted\_by : int (userId)
+* category\_id : int
+
+Application
+
+* application\_id : int
+* freelancer\_id : int (userId)
+* job\_id : int
+* status : String
+
+Skill
+
+* skill\_id : int
+* name : String
+* user\_id : int
+
+Category
+
+* category\_id : int
+* name : String
+
+## DAO Interfaces
+
+UserDao
+
+* User getUserByUsername(String username)
+* User createUser(User user)
+* List<User> getAllUsers()
+
+JobDao
+
+* List<Job> getAllJobs()
+* Job createJob(Job job)
+* List<Job> getJobsByClientId(int clientId)
+
+ApplicationDao
+
+* List<Application> getAllApplications()
+* List<Application> getApplicationsByFreelancerId(int userId)
+* Application createApplication(Application application)
+
+CategoryDao
+
+* List<Category> getAllCategories()
+
+SkillDao
+
+* List<Skill> getAllSkills()
+* Skill createSkill(Skill skill)

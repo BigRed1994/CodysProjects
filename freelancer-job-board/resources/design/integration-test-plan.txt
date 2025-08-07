@@ -1,0 +1,38 @@
+Database Integration Test Plan
+
+Happy Path Test Cases:
+
+* Create a new user and verify it's stored correctly.
+* Post a job and ensure it appears in the job list.
+* Submit a job application and retrieve it by freelancer.
+
+Corner Cases:
+
+* Applying to the same job twice (should prevent or update).
+* Logging in with incorrect credentials (should reject).
+* Posting a job with invalid category\_id (should error).
+
+Success Criteria:
+
+* Each test verifies expected database state after insert/update.
+* Invalid inputs result in correct error messages or exceptions.
+* Role-based access is enforced (freelancers can't post jobs, clients can't apply).
+
+Mock Data:
+
+* Users:
+
+  * Client: userId=1, role=client
+  * Freelancer: userId=2, role=freelancer
+* Categories:
+
+  * category\_id=1, name="Web Development"
+* Jobs:
+
+  * jobs\_id=1, posted\_by=1
+* Skills:
+
+  * skill\_id=1, user\_id=2
+* Applications:
+
+  * application\_id=1, freelancer\_id=2, job\_id=1

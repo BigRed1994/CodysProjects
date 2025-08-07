@@ -1,0 +1,7 @@
+Functional Requirements (MVP User Stories)
+
+1. As a freelancer, I can apply to a job that a client has posted.
+2. As a freelancer, I can view my submitted applications and their status.
+3. As a client, I can post a job with a title, description, and category.
+4. As a client, I can view a list of jobs I have posted.
+5. As an authenticated user, I can log in and be shown role-specific menu options.
